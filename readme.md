@@ -59,11 +59,12 @@ To identify cost-saving opportunities, the high-dimensional IT infrastructure da
 ### 3. Dimensionality Reduction Analysis
 We utilized PCA to ensure our clustering was based on behavioral patterns rather than just raw cost.
 
-![PCA Information Distribution](images/pca_information_distribution.png)
+![PCA Variance Distribution](./images/pca_information_distribution.png)
 *Above: The Variance Explained ratio showing how much infrastructure data was retained.*
 
 ### 2. The Infrastructure Cluster Map
 By plotting the 3D projection, we can clearly see the "High-Waste" clusters (Clusters 1 & 2) vs. the "Efficient" clusters.
 
 ![3D PCA Space](images/3d_pca_space.png)
+
 ![3D Projection](images/3d_projection_it_data_pca.png)
