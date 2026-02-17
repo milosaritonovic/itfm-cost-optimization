@@ -95,16 +95,6 @@ The final step moves from data science back to financial management.
 - Policy Generation: Provides a foundation for a "Tag-or-Terminate" governance policy to prevent future resource creep.
 
 
-============================================================
-PROJECT FINANCIAL IMPACT SUMMARY
-============================================================
-Total Monthly Infrastructure Spend:   $846,769.76
-Spend in 'High Waste' Clusters:        $498,359.69
-Estimated Monthly Savings (20% Opt):  $99,671.94
-Estimated Annual Savings:             $1,196,063.26
-------------------------------------------------------------
-Target Optimization Impact: 11.77% reduction in total IT overhead.
-============================================================
 
 
 
