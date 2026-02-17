@@ -52,24 +52,28 @@ Enterprise IT environments are often "black boxes." Departments over-provision c
 3. Open `shg_itfm.ipynb` in Jupyter Notebook or VS Code.
 
 
-## Data Visualizations
+## Data Visualizations & ML Pipeline
 
-To identify cost-saving opportunities, the high-dimensional IT infrastructure data was processed through a machine learning pipeline. The order of operations reflects the technical logic used in the `itfm.ipynb` script.
+To identify cost-saving opportunities, the high-dimensional IT infrastructure data was processed through the following machine learning sequence:
 
-### 1. Dimensionality Reduction Analysis (PCA)
-Before clustering, we utilized **Principal Component Analysis** to reduce noise and ensure our model focused on behavioral patterns. This plot shows the cumulative variance explained by the components.
+### 1. Dimensionality Reduction & Variance Analysis (PCA)
+Before clustering, we performed **Principal Component Analysis** to reduce noise. We analyzed the variance distribution to ensure that our 3D projection retained over 90% of the original data's "signal."
 
-![PCA Information Distribution](images/pca_information_distribution.png)
-*Above: The Variance Explained ratio showing that 3 components capture the majority of data variance.*
+![Variance Analysis](images/pca_information_distribution.png)
+*Above: Variance distribution showing the information density across components.*
 
-### 2. The Infrastructure Cluster Map (Agglomerative Clustering)
-After reducing dimensions, we applied **Agglomerative Clustering**. By plotting the 3D projection, we can clearly isolate "High-Waste" assets from "Efficient" resources.
+### 2. 3D Feature Projection
+By projecting the data into 3D space, we can visualize how the infrastructure assets relate to one another based on behavior rather than just cost.
 
-![3D PCA Space](images/3d_pca_space.png)
-*Above: The 3D Cluster Map where Clusters 1 & 2 represent low-utilization, high-cost "Ghost Assets".*
+![3D Projection](images/3d_projection_it_data_pca.png)
+*Above: Initial 3D spatial distribution of IT assets.*
 
-### 3. Strategic ROI Summary
-The final step translates these clusters into financial data. The script identifies approximately **$500,000 in annualized savings** by targeting the specific inefficiencies found in the clusters above.
+### 3. Clustering and Profiling (The Results)
+Finally, we applied **Agglomerative Clustering** to segment the assets into 4 distinct groups. This allows us to isolate the "Ghost Asset" clusters for decommissioning.
+
+![3D Cluster Map](images/3d_pca_space.png)
+*Above: Final cluster map identifying high-waste infrastructure (Clusters 1 & 2).*
+
 
 
 
