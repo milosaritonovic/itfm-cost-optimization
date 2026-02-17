@@ -51,24 +51,26 @@ Enterprise IT environments are often "black boxes." Departments over-provision c
 2. Install dependencies: `pip install -r requirements.txt`
 3. Open `shg_itfm.ipynb` in Jupyter Notebook or VS Code.
 
+
 ## Data Visualizations
 
-To identify cost-saving opportunities, the high-dimensional IT infrastructure data (30+ features) was projected into a 3D space using Principal Component Analysis (PCA).
+To identify cost-saving opportunities, the high-dimensional IT infrastructure data was processed through a machine learning pipeline. The order of operations reflects the technical logic used in the `itfm.ipynb` script.
 
-### 3. Dimensionality Reduction Analysis
-We utilized PCA to ensure our clustering was based on behavioral patterns rather than just raw cost.
+### 1. Dimensionality Reduction Analysis (PCA)
+Before clustering, we utilized **Principal Component Analysis** to reduce noise and ensure our model focused on behavioral patterns. This plot shows the cumulative variance explained by the components.
 
-![3D Projection](images/3d_projection_it_data_pca.png)
+![PCA Information Distribution](images/pca_information_distribution.png)
+*Above: The Variance Explained ratio showing that 3 components capture the majority of data variance.*
 
-
-### 2. The Infrastructure Cluster Map
-By plotting the 3D projection, we can clearly see the "High-Waste" clusters (Clusters 1 & 2) vs. the "Efficient" clusters.
-
-
-![PCA Variance Distribution](./images/pca_information_distribution.png)
-*Above: The Variance Explained ratio showing how much infrastructure data was retained.*
+### 2. The Infrastructure Cluster Map (Agglomerative Clustering)
+After reducing dimensions, we applied **Agglomerative Clustering**. By plotting the 3D projection, we can clearly isolate "High-Waste" assets from "Efficient" resources.
 
 ![3D PCA Space](images/3d_pca_space.png)
+*Above: The 3D Cluster Map where Clusters 1 & 2 represent low-utilization, high-cost "Ghost Assets".*
+
+### 3. Strategic ROI Summary
+The final step translates these clusters into financial data. The script identifies approximately **$500,000 in annualized savings** by targeting the specific inefficiencies found in the clusters above.
+
 
 
 
