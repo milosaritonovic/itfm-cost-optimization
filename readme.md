@@ -49,13 +49,13 @@ Enterprise IT environments are often "black boxes." Departments over-provision c
 ### **How to Run**
 1. Clone the repo.
 2. Install dependencies: `pip install -r requirements.txt`
-3. Open `shg_itfm.ipynb` in Jupyter Notebook or VS Code.
+3. Open `itfm.ipynb` in Jupyter Notebook or VS Code.
 
 
 ## Data Visualizations & ML Pipeline
 
 ### Step 1: Data Engineering & Cleaning
-The analysis transforms raw IT asset data into actionable business insights. The dataset simulates real-world messiness, including missing values, duplicates, and inconsistent formats across 30+ features. Automated cleaning pipelines handled nulls, standardized strings, and normalized numeric columns, ensuring metrics like Monthly_Spend and Uptime_Percentage were comparable and meaningful for analysis.
+The analysis transforms raw IT asset data into actionable business insights. The dataset simulates real-world messiness, including missing values, duplicates, and inconsistent formats across 30+ features. Automated cleaning pipelines handled nulls, standardized strings, and normalized numeric columns, ensuring metrics like `Monthly_Spend` and `Uptime_Percentage` were comparable and meaningful for analysis.
 
 ### Step 2: PCA & Dimensionality Reduction
 To handle the "Curse of Dimensionality," the project employs Principal Component Analysis (PCA).
@@ -84,6 +84,7 @@ Agglomerative Clustering identified four actionable infrastructure archetypes:
 
 ### Step 4: Strategic ROI Analysis
 Mapping clusters to financial impact revealed that high-waste servers account for $498K of monthly spend. Applying a conservative 20% optimization factor projects $1.2M in annual savings, reducing total IT overhead by ~12%. These insights support evidence-based IT policy decisions, such as targeted decommissioning and capacity planning.
+
 
 
 
