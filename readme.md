@@ -46,6 +46,7 @@ Enterprise IT environments are often "black boxes." Departments over-provision c
 ├── itfm.ipynb                         # Main analysis notebook
 ├── requirements.txt                   # Dependency list
 └── .gitignore                         # Metadata exclusion
+```
 
 ### **How to Run**
 1. Clone the repo.
@@ -68,3 +69,4 @@ By plotting the 3D projection, we can clearly see the "High-Waste" clusters (Clu
 ![3D PCA Space](images/3d_pca_space.png)
 
 ![3D Projection](images/3d_projection_it_data_pca.png)
+
