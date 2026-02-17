@@ -1,5 +1,3 @@
-# IT Infrastructure Cost Optimization (ITFM)
-
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
 ![Scikit-Learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
@@ -69,4 +67,5 @@ By plotting the 3D projection, we can clearly see the "High-Waste" clusters (Clu
 ![3D PCA Space](images/3d_pca_space.png)
 
 ![3D Projection](images/3d_projection_it_data_pca.png)
+
 
