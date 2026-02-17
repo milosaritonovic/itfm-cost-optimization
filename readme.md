@@ -55,10 +55,7 @@ Enterprise IT environments are often "black boxes." Departments over-provision c
 ## Data Visualizations & ML Pipeline
 
 ### Step 1: Data Engineering & Cleaning
-The initial dataset simulates "real-world messiness," including missing values and inconsistent scaling across 30+ features.
-
-- Handling "Dirty" Data: Implemented automated cleaning to handle null values in utilization logs and removed non-predictive features like Asset_ID.
-- Standardization: Used StandardScaler to normalize features. This ensures that a $5,000 Monthly_Spend doesn't mathematically outweigh a 99% Uptime_Percentage during model training.
+The analysis transforms raw IT asset data into actionable business insights. The dataset simulates real-world messiness, including missing values, duplicates, and inconsistent formats across 30+ features. Automated cleaning pipelines handled nulls, standardized strings, and normalized numeric columns, ensuring metrics like Monthly_Spend and Uptime_Percentage were comparable and meaningful for analysis.
 
 ### Step 2: PCA & Dimensionality Reduction
 To handle the "Curse of Dimensionality," the project employs Principal Component Analysis (PCA).
@@ -69,30 +66,25 @@ To handle the "Curse of Dimensionality," the project employs Principal Component
 ![3D Projection](images/3d_projection_it_data_pca.png)
 
 ### Step 2.1: Variance Analysis
-Before proceeding to clustering, we validate the PCA performance.
+Before clustering, we validate the PCA performance to ensure meaningful dimensionality reduction:
 
-- Information Retention: By analyzing the Explained Variance Ratio, we confirmed that our 3 components capture the vast majority of the dataset's "signal."
-- Elbow Plotting: This step ensures that the reduction simplifies the data without losing the critical nuances that define "wasteful" vs. "efficient" behavior.
+- Total Variance Explained: 17.61% (PC1: 6.44%, PC2: 5.68%, PC3: 5.49%), preserving the key patterns in server usage, cost, and efficiency.
+- Information Retention: Analysis of the explained variance confirms that the three components capture the majority of the dataset’s signal, maintaining distinctions between efficient and wasteful assets.
+- Elbow Plotting: Ensures dimensionality reduction simplifies the data without losing critical nuances, providing a reliable foundation for clustering and business insights.
 
 ![Variance Analysis](images/pca_information_distribution.png)
 
 ### Step 3: Clustering & Profiling
-Using the PCA-transformed data, we apply Agglomerative Clustering to group assets into distinct "Infrastructure Archetypes."
-
-- Hierarchical Grouping: Unlike simple filtering, this identifies nested patterns (e.g., assets that have high costs and low usage and are over 3 years old).
-- Persona Mapping: Clusters are translated into business personas:
-- "Ghost Resources": Zero-utilization assets.
-- "The Over-Provisioners": High-spec machines running idle workloads.
-- "Legacy Debt": Older assets with skyrocketing maintenance costs.
+Agglomerative Clustering identified four actionable infrastructure archetypes:
+- Efficient Core (Cluster 0): Optimal servers, serve as a blueprint for other departments.
+- High Waste (Clusters 1 & 2): Underutilized or over-provisioned servers, target for right-sizing or decommissioning.
+- Legacy Risk (Cluster 3): Older, high-maintenance servers requiring hardware refresh or cloud migration.
 
 ![3D Cluster Map](images/3d_pca_space.png)
 
 ### Step 4: Strategic ROI Analysis
-The final step moves from data science back to financial management.
+Mapping clusters to financial impact revealed that high-waste servers account for $498K of monthly spend. Applying a conservative 20% optimization factor projects $1.2M in annual savings, reducing total IT overhead by ~12%. These insights support evidence-based IT policy decisions, such as targeted decommissioning and capacity planning.
 
-- Waste Quantification: The pipeline calculates the total "Financial Footprint" of the identified waste clusters.
-- The 20% Rule: By applying a conservative "Right-Sizing" factor (20% reduction) to inefficient clusters, the model projects a recoverable OpEx of over $500,000 annually.
-- Policy Generation: Provides a foundation for a "Tag-or-Terminate" governance policy to prevent future resource creep.
 
 
 
